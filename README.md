@@ -6,9 +6,9 @@ I've created this material to help beginners understand the basics of Python pro
 - Why Python?
 - IDE Installation - Anaconda
 - Python Installation
-- First application - Hello World
+- Print - Your first application
 - Comments
-- Working with variables
+- Variables
 - Data types
 - Working with strings
 - Working with numbers
