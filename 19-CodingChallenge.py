@@ -60,3 +60,47 @@ def listBasketCounter(basket_list):
 fruit_basket = ["grape", "orange", "grape", "apple", "orange", "grape", "banana", "mango", "apple"]
 
 listBasketCounter(fruit_basket)
+
+
+"""
+Given an array arr & divisor, get the number of combination of 3 numbers where 
+i < j < k and sum of i, j, k is divisible by d.
+
+e.g. 
+
+arr = [2,3,1,6] and d = 2
+
+Result: 
+Combinations [1,2,3] and [1,3,6] meet the criteria hence result should be 2 (meaning 2 combinations)
+"""
+
+def getTest(arr,d):
+    import copy 
+    arr2 = copy.deepcopy(arr)
+    result = []
+    for i in range(0,len(arr)):
+        a = arr[i]
+        arr2.remove(a)
+        for j in range(len(arr2) - 1):
+            b = arr2[j]
+            c = arr2[j+1]
+            if j != 0:
+                ff = arr2[j]
+                e = arr2[j-1]
+                result.append([a,b,c])
+                result.append([a,d,e])
+            else:
+                result.append([a,b,c])
+        
+        arr2 = copy.deepcopy(arr)
+    
+    new_result = []
+    for z in result:
+        if z[0] < z[1] < z[2] and sum(z)%d == 0:
+            new_result.append(z)
+
+    final_result = len(new_result)
+    return final_result
+
+
+print( getTest([2,3,1,6], 2) )
