@@ -104,3 +104,28 @@ def getTest(arr,d):
 
 
 print( getTest([2,3,1,6], 2) )
+
+
+"""
+Happy Number
+"""
+
+def HappyNumber(n):
+
+    def checkHappy(var):
+        var = str(var)
+        total = 0
+        for i in range(len(var)):
+            a = int ( var[i] )
+            total = total + (a ** 2)
+        return total
+
+    while checkHappy(n) != 1:
+            print( checkHappy(n) )
+            n = checkHappy( checkHappy(n) )
+            print(n)
+    return True
+
+
+print( HappyNumber(19) )
+
